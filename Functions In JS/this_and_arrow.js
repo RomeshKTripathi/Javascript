@@ -15,8 +15,36 @@ const user = {
 
 // console.log(user.welcomeMessage())
 
-function chai(){
-    console.log(this)
-}
+// function chai(){
+//     console.log(this)
+// }
 
+// chai()
+
+const chai =()=>{
+    console.log(this) 
+}
 chai()
+
+const add = (val1, val2) =>{
+    return val1 + val2
+}
+console.log(add(3, 4))
+
+const multiply = (a, b) => a * b // implicit return
+
+console.log(multiply(3, 4))
+
+
+const getName = ()=>({username:"Romesh"}) // object should be wrapped in brackets'()'
+console.log(getName())
+
+const myArray = [2,3,4,5,3,4,5]
+
+// for each
+myArray.forEach((item)=>{
+    console.log(item)
+})
+
+
+
