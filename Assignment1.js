@@ -19,4 +19,4 @@ const bigInt = 234567899876543n;
 // Symbol type : symbol
 const special = Symbol(123)
 
-console.log(special)
+console.log(typeof nullValue)

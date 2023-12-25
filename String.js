@@ -21,8 +21,8 @@ const newStringOne = "      romesh    tripathi      ji"
 const url = "https://localhost/index.js/paper%20bot/name?=romesh"
 // console.log(url.replace("%20", " "))
 // console.log(url.includes("romesh"))
-// Convert String into array
 
+// Convert String into array
 const nameArr = newStringOne.trim().split(" ");
 // console.log(nameArr)
 
@@ -57,8 +57,11 @@ console.log(str.replaceAll('t','x')) // replaces all occurrences
 // console.log(str.search(RegExp)) search for a match between a regular expression and calling string
 console.log(str.slice(2,5)) // extracts a section of string and returns a new string : met
 console.log(str.startsWith('s')) // Determines whether the calling string begins with the characters of string searchString : true
-console.log(str.substr(3,5)) // returns a portion of the string starting at specified index and extending for a given LENGTH
-console.log(str.substring(3, 5)) // return portion BETWEEN the INDEXES
+const LENGTH = 5
+console.log(str.substr(3,LENGTH)) // returns a portion of the string starting at specified index and extending for a given LENGTH
+const START = 3
+const END = 5
+console.log(str.substring(START, END)) // return portion BETWEEN the INDEXES
 console.log(str.toLowerCase()) // string converted to lower case
 console.log(str.toUpperCase()) // string converted to upper case
 console.log(str.toString()) // Returns a string representing the specified object : something
@@ -70,17 +73,17 @@ console.log(str.valueOf()) // returns the primitive value of the specified objec
 // console.log()
 
 // ####### DOM Function for string ########
-console.log(str.anchor("link"))
-console.log(str.big()) 
-console.log(str.blink())
-console.log(str.bold())
-console.log(str.fixed())
-console.log(str.fontcolor("red"))
-console.log(str.fontsize(20))
-console.log(str.italics())
-console.log(str.link('url'))
-console.log(str.small())
-console.log(str.strike())
-console.log(str.sub())
-console.log(str.sup())
+console.log(str.anchor("link")) // <a name="link">something@gmail.com</a>
+console.log(str.big())  // <big>something@gmail.com</big>
+console.log(str.blink()) // <blink>something@gmail.com</blink>
+console.log(str.bold())  // <b>something@gmail.com</b>
+console.log(str.fixed())  // <tt>something@gmail.com</tt>
+console.log(str.fontcolor("red"))  // <font color="red">something@gmail.com</font>
+console.log(str.fontsize(20))  // <font size="20">something@gmail.com</font>
+console.log(str.italics()) // <i>something@gmail.com</i>
+console.log(str.link('url')) // <a href="url">something@gmail.com</a>
+console.log(str.small()) // <small>something@gmail.com</small>
+console.log(str.strike()) // <strike>something@gmail.com</strike>
+console.log(str.sub()) // <sub>something@gmail.com</sub>
+console.log(str.sup()) // <sup>something@gmail.com</sup>
 
