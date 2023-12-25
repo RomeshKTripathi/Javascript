@@ -4,4 +4,7 @@ const upperNames = coding.map((item)=>{
     return item.toUpperCase();
 })
 
-console.log(upperNames);
+// Chaining
+const res = coding.filter((item)=>item.startsWith('s')).map((item)=> item.toUpperCase());
+
+console.log(res); 
