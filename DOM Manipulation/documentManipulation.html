@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color:#eee;
+            background-color:#333;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    
+    <script>
+        // addLanguage("python")
+        // addLanguage("TypeScript")
+        const languages = ["Cpp", "Java", "Python", "Swift", "Ruby", ""]
+
+        addLanguageOptimized('Go')
+
+        function addLanguage(langName){ 
+            const ul = document.querySelector(".language");
+            const li = document.createElement('li');
+            // below method traverses whole tree to add inner HTML
+            li.innerHTML = `${langName}`;
+            
+            ul.appendChild(li);
+        }
+
+        function addLanguageOptimized(langName){
+            const li = document.createElement('li');
+            // Optimized approch to append textNode and child.
+            const textNode = document.createTextNode(langName);
+            li.appendChild(textNode);
+            // li.appendChild(document.createTextNode(langName))
+
+            document.querySelector('.language').appendChild(li);
+        }
+
+        // Edit 
+        const secondLang = document.querySelector('li:nth-child(2)');
+        // secondLang.innerHTML = 'Swift'
+        const newLi = document.createElement('li')
+        newLi.textContent = 'Java';
+        secondLang.replaceWith(newLi);
+    
+        // Edit
+        const firstLang = document.querySelector("li:first-child");
+        firstLang.outerHTML = '<li>TypeScript</li>';
+
+        // Removing Element.
+        const lastLang = document.querySelector('li:last-child');
+        lastLang.remove();
+
+    </script>
+</body>
+</html>
