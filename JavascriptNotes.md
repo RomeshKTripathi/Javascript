@@ -46,7 +46,8 @@ console.log(typeof(bigNumber))
 ```
     Output: bigint
 
-* Javascript is a dynamically typed language | We don't need to assing datatype to variables.
+> [!NOTE] 
+> Javascript is a dynamically typed language | We don't need to assing datatype to variables.
 
 ## Reference Type | Non Primitive datatypes;
 1. Arrays
