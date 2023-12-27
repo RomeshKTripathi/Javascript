@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333;
+            color:aliceblue;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <li><img width = "100px" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  alt="Child with donkey"></li>
+        <li><img width = "100px" src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt="Old man with japanese hat"></li>
+        <li><img width = "100px" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt="Statue of Buddha"></li>
+        <li><img width = "100px" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt="Boat in river"></li>
+        <li><img width = "100px" src="https://images.pexels.com/photos/2519829/pexels-photo-2519829.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt="Statue of a warrior" ></li>
+        <li><a id="google" style="color: aliceblue;" href="http://google.com" >Google</a>
+        </li>
+    </ul>
+
+    <script>
+
+        const images = document.querySelectorAll('img')
+
+        images.forEach(removeOnClick);
+
+        function removeOnClick(img){
+            img.addEventListener('click', (e)=>{
+                let removeIt = e.target.parentNode;
+                removeIt.remove();
+            })
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //     const images = document.querySelectorAll('img')
+    //     images.forEach(addListener)
+    //     function addListener(img){
+    //         img.addEventListener('click',(e)=>{
+    //             console.log(e)
+    //             // e.stopPropogation(); to stop bubbling.
+    //         }, false/*Event Propogation|Bubbling & Capturing*/)
+    //     }
+
+    //     // Event Object to study
+    //     /*
+    //     type, timestamp, preventDefault, target, toElement, srdElement, currentTarget
+    //     intervies: clientX, clientY, screenX, screenY
+    //     altkey, ctrlkey, shiftkey, keyCode, 
+    //     */
+    //    document.getElementById('google').addEventListener('click', (e)=>{
+    //     e.preventDefault();
+    //     console.log('google clicked')
+    //    }, false)
+
+    </script>
+</body>
+</html>
