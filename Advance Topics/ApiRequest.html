@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333;
+            color:#eee;
+        }
+        .card{
+            display:block;
+            border:1px solid #555;
+            background-color:#222;
+            width: 400px;
+            margin:auto;
+            padding:20px;
+            border-radius: 5px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #eee;
+            position: relative;
+        }
+        .profile{
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            border:1px solid #aaa;
+            margin: auto;
+            position:relative
+        }
+        .profile img{
+            width:100px;
+            border-radius: 50%;
+        }
+        .username{
+            width: 100%;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 23px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .info table{
+            padding:10px;
+            /* border-collapse: ; */
+            width: 100%;
+            font-size: 18px;
+        }
+        .info table td{
+            padding:10px;
+            width: auto;
+        }
+        .info table td:first-child{
+            text-wrap: wrap;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+        .search{
+            display:block;
+            width: 400px;
+            margin-top: 50px;
+            margin:20px auto;
+            padding: 30px;
+
+        }
+        .search input{
+            height: 40px;
+            width:100%;
+            background-color: #222;
+            border:0.5px solid #555;
+            border-radius: 50px;
+            color:#eee;
+            text-indent: 30px;
+            font-size: 18px;
+        }
+        .search button{
+            height: 40px;
+            width:100%;
+            background: #007fb1b2;
+            border: 1px solid #002b3bb2;
+            color:#00161f;
+            letter-spacing: 5px;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="card">
+        <div class="profile">
+            <img src="" alt="">
+        </div>
+        <div class="username">
+            romeshktripathi
+        </div>
+        <div class="info">
+            <table></table>
+        </div>
+    </div>
+    <div class="search">
+        <input type="text" name="" id="searchName">
+        <button id = "search">Search</button>
+    </div>
+
+<script>
+    const informationKey= ['login', 'followers', 'public_repos']
+    let username = `romeshktripathi`;
+
+    document.querySelector('#search').addEventListener('click', ()=>{
+        const searchValue = document.querySelector('#searchName').value;
+        username = (searchValue !== '')?searchValue:username;
+        username = username.toLowerCase();
+        createCard(username);
+    })
+
+    function createCard(username){
+        const requestUrl = `https://api.github.com/users/${username}`;
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+
+
+        xhr.onreadystatechange = function (){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            document.querySelector('.profile img').setAttribute('src', data.avatar_url);
+            document.querySelector('.username').innerHTML = data.name;
+            let rows ="";
+            informationKey.forEach((element) => {
+                rows += `<tr><td>${element}</td><td>${data[element]}</td></tr>`
+            });
+            
+            rows += `<tr><td>Profile Link</td><td>${'check profile'.link(data['html_url'])}</td></tr>`
+            const table = document.createElement('tbody');
+            table.innerHTML = rows;
+            document.querySelector('.info table').innerHTML = '';
+            document.querySelector('.info table').appendChild(table);
+            console.log(table)
+        }
+    }
+    xhr.send();
+    }
+    
+    /**
+     * console is a debugger tool(Dev Tool)
+     */
+</script>
+</body>
+
+</html>
