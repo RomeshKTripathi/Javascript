@@ -110,7 +110,7 @@
 <script>
     const informationKey= ['login', 'followers', 'public_repos']
     let username = `romeshktripathi`;
-
+    createCard(username)
     document.querySelector('#search').addEventListener('click', ()=>{
         const searchValue = document.querySelector('#searchName').value;
         username = (searchValue !== '')?searchValue:username;
