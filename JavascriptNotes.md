@@ -112,3 +112,7 @@ console.log(userOne)
 
 > [!NOTE]
 > In above example we can see that reference of *userOne* is assigned to *copyUserName* and we are able to manipulate the values of object. Object is reference type *variable.*
+
+
+
+

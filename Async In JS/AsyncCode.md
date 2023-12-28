@@ -6,8 +6,8 @@
 ## Execution Context
 1. execute one line of code at time
 ```Javascript
-    console.log() // first executed
-    console.log() // second executed
+    console.log(); // first executed
+    console.log(); // second ex ed
 ```
 ### Blocking Code vs Non Blocking Code
 ![Javascript Working Diagram](./JS%20Engine.png)
@@ -51,11 +51,44 @@
         iii. Everything else executed.
         Functional execution context is deleted after execution.
 
+## setInterval() & clearInterval()
+
+> setInterval()
+    
+    Repeatedly performs given task after given interval. and RETURNS its REFERENCE.
+```js
+const intervalReferance = setInterval(()=>{
+    // Some task to perform repeatedly.
+}, 1000, OPTIONAL_PARAMETER);
+
+``` 
+> clearInterval()
+
+    To clear a interval we can use clearInterval() function which takes the reference of the setInterval which you want to clear
+
+```js
+clearInterval(intervalReferance);
+```
 
 
 
+## setTimeout() & clearTimeout()
 
+> setTimeout()
 
+    Executes after given time
 
+```js
+const timeoutReference = setTimeout(()=>{
+// task to execute
+}, 1000);
+```
+
+> clearTimeout()
+
+    used to clear timeout function before its execution. it takes reference of setTimeout which you want to clear
+```js
+clearTimeout(timeoutReference);
+```
 
 

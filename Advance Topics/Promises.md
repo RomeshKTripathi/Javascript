@@ -7,7 +7,7 @@ The Promise object represents the eventual completion (or failure) of an asynchr
 ```js
 const promiseOne = new Promise()
 ```
-Promise constructor takes a reference function and calls it with two parameters *resolve* and *reject* 
+Promise constructor takes a callback function and calls it with two parameters *resolve* and *reject* 
 ```js
 const promise = new Promise(function(resolve, reject){
     // your async task here

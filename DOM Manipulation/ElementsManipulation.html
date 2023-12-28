@@ -22,15 +22,15 @@
         div.style.padding = '12px';
         
         //Simple practice to add Text. but both are good to implement.
-        div.innerText = "New Generated Div";
+        // div.innerText = "New Generated Div";
         /*
             div.attributes style selects and brings and then sets the attributes
             but element.setAttribut() function directly sets the attributes    
         */
 
         // Good practice to add text for optimization.
-        const textNode = document.createTextNode("New Generated Div")
-        // div.appendChild(textNode)
+        const textNode = document.createTextNode("New Generated Div Script JS")
+        div.appendChild(textNode)
        
         document.body.appendChild(div)
         console.log(div);
