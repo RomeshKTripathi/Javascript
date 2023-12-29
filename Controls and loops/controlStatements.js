@@ -1,4 +1,4 @@
-if(false){
+if(true){
     console.log(`Inside if statement`)
 }
 // Comparicion operaters
@@ -6,7 +6,7 @@ if(false){
 // console.log(2 != '2')
 
 // SHORTHAND NOTATION | Implicit Scope
-if(false) console.log("one"), console.log('two'); // this practice is not recomanded | implicit scope
+if(true) console.log("one"), console.log('two'); // this practice is not recomanded | implicit scope
 
 /*
 switch (key) {
