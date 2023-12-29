@@ -34,8 +34,8 @@
 
         function removeOnClick(img){
             img.addEventListener('click', (e)=>{
-                let removeIt = e.target.parentNode;
-                removeIt.remove();
+                let removeIt = e.target.parentNode;// we have to remove <li> tag which contains image.
+                removeIt.remove(); 
             })
         }
 

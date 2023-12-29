@@ -589,14 +589,25 @@ const usernames = data.filter((details)=>{
     return details.name.startsWith(firstLetter);
 })
 
-console.log(usernames)
+// console.log(usernames)
 
 
 // Extracting the first names of the users.
 
-const firstNames = usernames.map((detail)=>{
+let lastNames = usernames.map((detail)=>{
     const fullname = detail['name'].split(' ');
-    return fullname[0];
+    return fullname[1];
 })
-console.log(firstNames);
+// console.log(firstNames);
  
+
+// All the unique last names
+
+let uniqueLastNames=[];
+lastNames.forEach((lname)=>{
+    if(!uniqueLastNames.includes(lname)){
+        uniqueLastNames.push(lname);
+    }
+})
+
+console.log(uniqueLastNames);

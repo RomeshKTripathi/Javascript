@@ -33,5 +33,6 @@ const shoppingCart = [
 // we have to add all prices from above cart data.
 
 const totalPrice = shoppingCart.reduce((acc, item)=> acc+item.price, 0)
+// 0 is passed to initialize acc(accumalator) first time.
 
 console.log(`Price to pay ${totalPrice}`)
