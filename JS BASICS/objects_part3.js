@@ -6,7 +6,7 @@ const course = {
     courseInstructor : 'hitest'
 }
 
-// course.courseInstructor
+// course.courseInstructor // to avoid this 
 const {courseInstructor} = course // clean syntax to extract value | Object Destructuring.
 
 console.log(courseInstructor)
