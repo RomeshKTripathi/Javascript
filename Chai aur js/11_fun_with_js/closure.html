@@ -47,7 +47,7 @@
     //     return displayName;
     // }
 
-    // const myFunc = makeFunc();
+    // const myFunc = makeFunc(); // Lexical scope(Outer score of displayName) if received.
     // myFunc();
 
     </script>
@@ -61,7 +61,6 @@
 
         function clickHandler(color){
             // document.body.style.backgroundColor = `${color}`
-
             return function(){
                 document.body.style.backgroundColor = `${color}`
             }

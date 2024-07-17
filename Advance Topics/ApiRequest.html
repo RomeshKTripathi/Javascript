@@ -124,8 +124,10 @@
         xhr.open('GET', requestUrl);
 
 
+        // calls the passed function every time state changes.
         xhr.onreadystatechange = function (){
         console.log(xhr.readyState);
+        // check for final state 4: data received successfully from api data/200/404 etc
         if(xhr.readyState === 4){
             const data = JSON.parse(this.responseText);
             document.querySelector('.profile img').setAttribute('src', data.avatar_url);
@@ -143,6 +145,7 @@
             console.log(table)
         }
     }
+    // sends the rquest to API.
     xhr.send();
     }
     
